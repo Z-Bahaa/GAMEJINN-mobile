@@ -1,9 +1,0 @@
-const gameslist = [
-  {
-    
-  }
-]
-
-const coachesList = {
-
-}
