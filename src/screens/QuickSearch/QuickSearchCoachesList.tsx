@@ -78,8 +78,8 @@ const QuickSearchCoachesList = ({data, coachOnPress}) => {
   return (
     <Box  style={styles.container} dataSet={{ media: ids.container}} >
         {data.map((c: any, i: number) => ( 
-          <Box  style={styles.container2} dataSet={{ media: ids.container2}} >
-          <Button variant='unstyled' key={i} onPress={coachOnPress} style={styles.item} dataSet={{ media: ids.item}}>
+          <Box  style={styles.container2} dataSet={{ media: ids.container2}}  key={i}>
+          <Button variant='unstyled' onPress={coachOnPress} style={styles.item} dataSet={{ media: ids.item}}>
             <HStack  /* style={styles.item} dataSet={{ media: ids.item}} */ flexGrow={1}>
               <Image alt="game image" source= {{uri : c.imageUrl}}    style={styles.image} dataSet={{ media: ids.image}}   />
               <VStack justifyContent='center' >

@@ -9,7 +9,8 @@ const makeStyles = () => {
 
   const styleSheet = StyleSheet.create({
     container: {
-      alignItems: 'center',
+      width: '100%',
+      alignItems: 'flex-end',
       justifyContent: 'space-between',
       paddingTop: theme.spacing[24],
       '@media (min-width: 800px)': {
@@ -26,11 +27,12 @@ const makeStyles = () => {
     },
     button: {
       alignItems: 'center',
+      marginEnd: theme.spacing[8],
       // backgroundColor: theme.colors.textPrimary,
     },
     buttonText: {
       color: theme.colors.textSecondary,
-      fontSize: theme.fontSize.sm,
+      fontSize: theme.fontSize.md,
       '@media (min-width: 800px)': {
         fontSize: theme.fontSize.md,
       },
@@ -41,7 +43,7 @@ const makeStyles = () => {
   return styleSheet
 }
 
-const QuickSearchHeading = ({primaryText, buttonOnPress}) => {
+const QuickSearchHeading = ({primaryText, buttonOnPress, secondaryText}) => {
   const [isSmallScreen] = useMediaQuery({
     maxWidth: 480
   });
@@ -63,8 +65,7 @@ const QuickSearchHeading = ({primaryText, buttonOnPress}) => {
       <Text style={styles.primaryText} dataSet={{ media: ids.primaryText}} >{primaryText}</Text>
       <Button variant="unstyled" p={0} style={styles.button} dataSet={{ media: ids.button}} onPress={buttonOnPress}>
         <HStack>
-          <Text style={styles.buttonText} dataSet={{ media: ids.buttonText}} >view all</Text>
-          <Icon as={MaterialIcons} name="arrow-forward-ios" size='14px' color={colors.textSecondary}  ml={.5} mt={isSmallScreen ? 0 : 1}  />
+          <Text style={styles.buttonText} dataSet={{ media: ids.buttonText}} >{secondaryText}</Text>
         </HStack>
       </Button>
     </HStack>

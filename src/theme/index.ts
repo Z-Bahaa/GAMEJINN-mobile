@@ -11,7 +11,7 @@ const primaryTheme = extendTheme({
     textGrey: "#919197",
     textBlack: "#000",
     white: "#fff",
-    lightBlue: "#5f05a5",
+    brandLight: "#5f05a5",
     grey: "#919197",
   },
   fontSize: {

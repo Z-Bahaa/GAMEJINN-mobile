@@ -1,4 +1,4 @@
-import { Box, VStack, useTheme, Image, Text, ScrollView, useMediaQuery, Button } from 'native-base'
+import { Box, VStack, useTheme, Image, Text, ScrollView, useMediaQuery, Button, Pressable } from 'native-base'
 import StyleSheet from 'react-native-media-query';
 
 
@@ -74,12 +74,12 @@ const QuickSearchGamesCarousel = ({data, gameOnPress}) => {
 
       >
         {data?.slice(0,6).map((g: any, i: number) => (
-          <Button variant='unstyled' padding={0}  key={i} onPress={gameOnPress}>
+          <Pressable variant='unstyled' padding={0}  key={i} onPress={gameOnPress}>
             <VStack  style={styles.item} dataSet={{ media: ids.item}}>
               <Image alt="game image" source= {{uri : g.imageUrl}}    style={styles.image} dataSet={{ media: ids.image}}   />
               <Text   style={styles.text} dataSet={{ media: ids.text}} >{g.title}</Text>
             </VStack>
-          </Button>
+          </Pressable>
         ))}
       </ScrollView>
     </Box>

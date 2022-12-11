@@ -51,7 +51,7 @@ const makeStyles = () => {
   return styleSheet
 }
 
-const SearchHeader = (props: any, _ref: any) => {
+const SearchHeader = () => {
   const [isSmallScreen] = useMediaQuery({
     maxWidth: 480
   });
