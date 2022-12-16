@@ -6,6 +6,7 @@ import { useFonts } from 'expo-font'
 import QuickSearch from './screens/QuickSearch'
 import Search from './screens/Search'
 import Coaches from './screens/Coaches'
+import Games from './screens/Games'
 
 const makeStyles = () => {
   const theme = useTheme();
@@ -29,7 +30,7 @@ export default function SubApp() {
 
   return (
       <Box safeArea style={styles.container} dataSet={{ media: ids.container}}>
-        <Coaches />
+        <Games />
       </Box>
     );
 }
