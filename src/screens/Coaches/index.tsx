@@ -24,6 +24,15 @@ const makeStyles = () => {
       backgroundColor: theme.colors.brandPrimary,
       height: 'auto',
     },
+    searchContainer: {
+      width: '100%',
+      flexGrow: 1,
+      paddingStart: theme.spacing[16],
+      paddingEnd: theme.spacing[12],
+      '@media (min-width: 800px)': {
+        paddingHorizontal: 100,
+      },
+    },
     description: {
       color: theme.colors.textGrey,
       fontSize: theme.fontSize.xs,
@@ -46,7 +55,7 @@ const Coaches = () => {
       borderRadius,
     } = useTheme(); 
 
-    const [filtersVisibility, setFiltersVisibility] = useState(true);
+    const [filtersVisibility, setFiltersVisibility] = useState(false);
     const [selectedGame, setSelectedGame] = useState('');
     const [selectedServiceType, setSelectedServiceType] = useState(true);
 
@@ -56,16 +65,17 @@ const Coaches = () => {
 
   return (
     <VStack style={styles.container} dataSet={{ media: ids.container}} >
-      <SearchHeader />
+      <Box style={styles.searchContainer} dataSet={{ media: ids.searchContainer}} >
+        <SearchHeader />
+      </Box>
       <CoachesHeading primaryText='coaches' buttonOnPress={() => setFiltersVisibility(true)} />
         <CoachesGrid data={coachesList} itemOnPress={() => alert("coach card")}/>
-      {/* </ScrollView> */}
-      {filtersVisibility ? <FiltersModal 
+      {isSmallScreen ? (filtersVisibility ? <FiltersModal 
         setSelectedGame={(val: any) => setSelectedGame(val)} 
         gamesData={filterGames}
         setSelectedServiceType={(val: any) => setSelectedServiceType(val)}
         serviceTypesData={filterServiceTypes}
-        /> : ""}
+        /> : "") : ""}
     </VStack>
   )
 }

@@ -175,12 +175,6 @@ const FiltersModal = ({setSelectedGame, setSelectedServiceType, gamesData, servi
               <Icon as={MaterialIcons} name="keyboard-arrow-down" size='28px' color={colors.textPrimary} mb={-.5} mr={.5} />}
             </Pressable>
           </HStack>
-            {rangeVisibility ? (
-              <RangeSlider 
-                
-              />
-            ) : ""
-            }
         </VStack>
       </Box>
     </VStack>

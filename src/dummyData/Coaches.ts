@@ -98,6 +98,204 @@ const coachesList = [
         },
     ]
   },
+  {
+    name: 'Product',
+    imageUrl: 'https://wallpapers.com/images/hd/cool-neon-blue-profile-picture-u9y9ydo971k9mdcf.jpg',
+    startingAt: '300',
+    games: [
+        {
+          title: 'valorant',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Elegant',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU',
+    startingAt: ' 340',
+    games: [
+        {
+          title: 'Call of duty',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'missy',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT6NaU4Ur8LgGKKc8KqSQoX1KhcMnKgxVYQA&usqp=CAU',
+    startingAt: ' 280',
+    games: [
+        {
+          title: 'smash bros.',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Product',
+    imageUrl: 'https://wallpapers.com/images/hd/cool-neon-blue-profile-picture-u9y9ydo971k9mdcf.jpg',
+    startingAt: '300',
+    games: [
+        {
+          title: 'valorant',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Elegant',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU',
+    startingAt: ' 340',
+    games: [
+        {
+          title: 'Call of duty',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'missy',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT6NaU4Ur8LgGKKc8KqSQoX1KhcMnKgxVYQA&usqp=CAU',
+    startingAt: ' 280',
+    games: [
+        {
+          title: 'smash bros.',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Product',
+    imageUrl: 'https://wallpapers.com/images/hd/cool-neon-blue-profile-picture-u9y9ydo971k9mdcf.jpg',
+    startingAt: '300',
+    games: [
+        {
+          title: 'valorant',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Elegant',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU',
+    startingAt: ' 340',
+    games: [
+        {
+          title: 'Call of duty',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'missy',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT6NaU4Ur8LgGKKc8KqSQoX1KhcMnKgxVYQA&usqp=CAU',
+    startingAt: ' 280',
+    games: [
+        {
+          title: 'smash bros.',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Product',
+    imageUrl: 'https://wallpapers.com/images/hd/cool-neon-blue-profile-picture-u9y9ydo971k9mdcf.jpg',
+    startingAt: '300',
+    games: [
+        {
+          title: 'valorant',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Elegant',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU',
+    startingAt: ' 340',
+    games: [
+        {
+          title: 'Call of duty',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'missy',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT6NaU4Ur8LgGKKc8KqSQoX1KhcMnKgxVYQA&usqp=CAU',
+    startingAt: ' 280',
+    games: [
+        {
+          title: 'smash bros.',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Product',
+    imageUrl: 'https://wallpapers.com/images/hd/cool-neon-blue-profile-picture-u9y9ydo971k9mdcf.jpg',
+    startingAt: '300',
+    games: [
+        {
+          title: 'valorant',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Elegant',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU',
+    startingAt: ' 340',
+    games: [
+        {
+          title: 'Call of duty',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'missy',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT6NaU4Ur8LgGKKc8KqSQoX1KhcMnKgxVYQA&usqp=CAU',
+    startingAt: ' 280',
+    games: [
+        {
+          title: 'smash bros.',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Product',
+    imageUrl: 'https://wallpapers.com/images/hd/cool-neon-blue-profile-picture-u9y9ydo971k9mdcf.jpg',
+    startingAt: '300',
+    games: [
+        {
+          title: 'valorant',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'Elegant',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU',
+    startingAt: ' 340',
+    games: [
+        {
+          title: 'Call of duty',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
+  {
+    name: 'missy',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT6NaU4Ur8LgGKKc8KqSQoX1KhcMnKgxVYQA&usqp=CAU',
+    startingAt: ' 280',
+    games: [
+        {
+          title: 'smash bros.',
+          imageUrl: 'https://cdna.artstation.com/p/assets/images/images/036/947/866/large/ismael-fofana-valorant-game-poster-design.jpg?1619051884',
+        },
+    ]
+  },
 ]
 
 const filterGames = [

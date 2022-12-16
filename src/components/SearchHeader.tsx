@@ -17,11 +17,11 @@ const makeStyles = () => {
       backgroundColor: theme.colors.brandPrimary,
       height: 'auto',
       paddingVertical: theme.spacing[12],
-      paddingStart: theme.spacing[16],
-      paddingEnd: theme.spacing[12],
-      '@media (min-width: 800px)': {
-        paddingHorizontal: 100,
-      },
+      // paddingStart: theme.spacing[16],
+      // paddingEnd: theme.spacing[12],
+      // '@media (min-width: 800px)': {
+      //   paddingHorizontal: 100,
+      // },
     },
     logo: {
       fontSize: theme.fontSize.xl,

@@ -18,7 +18,7 @@ const makeStyles = () => {
       paddingStart: theme.spacing[16],
       paddingEnd: theme.spacing[12],
       '@media (min-width: 800px)': {
-        paddingTop: theme.spacing[16],
+        paddingTop: theme.spacing[8],
         paddingHorizontal: 100,
       },
       // backgroundColor: theme.colors.textPrimary,
@@ -27,7 +27,7 @@ const makeStyles = () => {
       color: theme.colors.textPrimary,
       fontSize: theme.fontSize.regular,
       '@media (min-width: 800px)': {
-        fontSize: theme.fontSize.regular,
+        fontSize: theme.fontSize.regular*1.25,
       },
     },
     button: {
