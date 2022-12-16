@@ -5,7 +5,7 @@ import { useFonts } from 'expo-font'
 
 import QuickSearch from './screens/QuickSearch'
 import Search from './screens/Search'
-// import Coaches from './screens/Coaches'
+import Coaches from './screens/Coaches'
 
 const makeStyles = () => {
   const theme = useTheme();
@@ -17,11 +17,6 @@ const makeStyles = () => {
       alignItems: 'center',
       justifyContent: 'flex-start',
       backgroundColor: theme.colors.brandPrimary,
-      paddingStart: theme.spacing[16],
-      paddingEnd: theme.spacing[12],
-      '@media (min-width: 800px)': {
-        paddingHorizontal: 100,
-      },
     },
   });
 
@@ -34,7 +29,7 @@ export default function SubApp() {
 
   return (
       <Box safeArea style={styles.container} dataSet={{ media: ids.container}}>
-        <Search />
+        <Coaches />
       </Box>
     );
 }

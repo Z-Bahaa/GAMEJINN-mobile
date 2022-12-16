@@ -33,6 +33,7 @@ const primaryTheme = extendTheme({
   borderRadius: {
     4: 4,
     8: 8,
+    16: 16,
   },
   fontConfig: {
     500: {

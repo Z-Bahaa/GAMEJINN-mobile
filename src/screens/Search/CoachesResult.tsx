@@ -118,8 +118,8 @@ const CoachesResult = ({data, resultOnPress}) => {
           return (
             <HStack style={styles.gameBoxMultiple} dataSet={{ media: ids.gameBoxMultiple}}>
               {
-                games.map((g: any) => (
-                  <Image alt='image' source={{uri: g.imageUrl}} style={styles.gameImageMultiple} dataSet={{ media: ids.gameImageMultiple}}/>
+                games.map((g: any, i: number) => (
+                  <Image alt='image' source={{uri: g.imageUrl}} style={styles.gameImageMultiple} dataSet={{ media: ids.gameImageMultiple}} key={i}/>
                 ))
               }
             </HStack>
@@ -128,8 +128,8 @@ const CoachesResult = ({data, resultOnPress}) => {
         default:
           return (
             <HStack style={styles.gameBoxMultiple} dataSet={{ media: ids.gameBoxMultiple}}>
-              {games?.slice(0,3).map((g: any) => (
-                  <Image alt='image' source={{uri: g.imageUrl}} style={styles.gameImageMultiple} dataSet={{ media: ids.gameImageMultiple}}/>
+              {games?.slice(0,3).map((g: any, i: number) => (
+                  <Image alt='image' source={{uri: g.imageUrl}} style={styles.gameImageMultiple} dataSet={{ media: ids.gameImageMultiple}} key={i}/>
                 ))}
               <Center style={styles.gameBoxMultipleExtra} dataSet={{ media: ids.gameBoxMultipleExtra}}>
                 <Text style={styles.gameBoxMultipleExtraText} dataSet={{ media: ids.gameBoxMultipleExtraText}}>{"+" + (games.length - 3)}</Text>
@@ -138,7 +138,7 @@ const CoachesResult = ({data, resultOnPress}) => {
           )
           break;
       }
-    }
+    } 
 
 
 

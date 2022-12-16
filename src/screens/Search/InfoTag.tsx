@@ -45,8 +45,8 @@ const InfoTag = ({data}) => {
   return (
     <HStack  style={styles.container} dataSet={{ media: ids.container}} >
       {
-        data?.slice(0,2).map((t: any) => (
-          <Box style={styles.textBox} dataSet={{ media: ids.textBox}} >
+        data?.slice(0,2).map((t: any, i: number) => (
+          <Box style={styles.textBox} dataSet={{ media: ids.textBox}} key={i}>
             <Text style={styles.text} dataSet={{ media: ids.text}} >{t}</Text>
           </Box>
         ))

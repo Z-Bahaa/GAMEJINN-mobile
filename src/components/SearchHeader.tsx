@@ -1,9 +1,10 @@
 import React, {useState, forwardRef, useImperativeHandle} from 'react'
 import { HStack, Text, useTheme, Icon, Input, Center, useMediaQuery } from 'native-base'
-import {  TextInput } from 'react-native';
 import StyleSheet from 'react-native-media-query';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import { AntDesign } from '@expo/vector-icons';
+
+import SearchIcon from './SearchIcon'
 
 const makeStyles = () => {
   const theme = useTheme();
@@ -11,12 +12,16 @@ const makeStyles = () => {
 
   const styleSheet = StyleSheet.create({
     container: {
-      flexGrow: 1,
-      alignItems: 'flex-end',
+      alignItems: 'flex-start',
       justifyContent: 'flex-start',
       backgroundColor: theme.colors.brandPrimary,
       height: 'auto',
       paddingVertical: theme.spacing[12],
+      paddingStart: theme.spacing[16],
+      paddingEnd: theme.spacing[12],
+      '@media (min-width: 800px)': {
+        paddingHorizontal: 100,
+      },
     },
     logo: {
       fontSize: theme.fontSize.xl,
@@ -82,7 +87,7 @@ const SearchHeader = () => {
           flex={1}
           InputLeftElement={
             <Center style={styles.searchIconBox}  dataSet={{ media: ids.searchIconBox}}>
-              <Icon as={AntDesign} name="search1" size='20px' style={styles.searchIcon} dataSet={{ media: ids.searchIcon}}/>
+              <SearchIcon/>
             </Center>
           }
           value={searchValue}
