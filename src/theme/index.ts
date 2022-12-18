@@ -13,6 +13,7 @@ const primaryTheme = extendTheme({
     white: "#fff",
     brandLight: "#5f05a5",
     grey: "#919197",
+    yellow: "#ffd68a",
   },
   fontSize: {
     xxs: 8,
