@@ -1,9 +1,13 @@
 import {useState } from 'react'
-import { VStack, Text, useTheme, Box,  useMediaQuery } from 'native-base'
+import { VStack, Text, useTheme, Box,  useMediaQuery, Button } from 'native-base'
 import StyleSheet from 'react-native-media-query';
 
 import BookingHeader from './BookingHeader'
 import ScheduleStage from './ScheduleStage'
+import ContactStage from './ContactStage'
+import PaymentStage from './PaymentStage'
+import PaymentSuccess from './PaymentSuccess'
+
 import { session } from '../../dummyData/Booking'
 
 
@@ -34,10 +38,10 @@ const Payment = () => {
     maxWidth: 480
   });
     const {ids, styles} = makeStyles();
-
-    const [scheduleState, setScheduleState] = useState('active');
-    const [contactState, setContactState] = useState('inactive');
-    const [paymentState, setPaymentState] = useState('inactive');
+  
+    const [scheduleState, setScheduleState] = useState('completed');
+    const [contactState, setContactState] = useState('completed');
+    const [paymentState, setPaymentState] = useState('active');
     
     const headerValues = [
       { 
@@ -57,20 +61,40 @@ const Payment = () => {
       },
     ];
    
-    const [date, setDate] = useState('wednesday november 7th, 2023');
+    const [date, setDate] = useState('wed, february 2nd 2023');
 
-
+    const renderSwitch = () => {
+       
+      if(paymentState === 'completed') {
+        return (
+          <PaymentSuccess />
+        )
+      } else {
+        switch('active') {
+          case scheduleState:
+            return (<ScheduleStage  session={session} date={date} />);
+            case contactState:
+              return (<ContactStage  />);
+            case paymentState:
+              return (<PaymentStage  session={session} date={date}  />);
+          default:
+            return "";
+        }
+      }
+    }
 
 
   return (
     <Box  style={styles.container} dataSet={{ media: ids.container}} >
-      <BookingHeader data={headerValues}/>
-      {(scheduleState === 'active') ? 
-        <ScheduleStage  session={session} date={date} setDate={(val: any) => setDate(val)}  />
-      : ""}
+      {(paymentState  === 'completed')   ? "" : <BookingHeader data={headerValues}/>}
+      {
+        renderSwitch()
+      }
     </Box>
   )
 }
+
+// 
 
 
 export default Payment

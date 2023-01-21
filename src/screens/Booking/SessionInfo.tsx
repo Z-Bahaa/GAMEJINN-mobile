@@ -12,7 +12,11 @@ const makeStyles = () => {
       alignItems: 'center',
       justifyContent: 'flex-start',
       // backgroundColor: theme.colors.textPrimary,
-      paddingBottom: theme.spacing[16],
+      paddingBottom: theme.spacing[24],
+      '@media (min-width: 800px)': {
+        alignItems: 'flex-start',
+      },
+
     },
     imageContainer: {
     },
@@ -20,6 +24,10 @@ const makeStyles = () => {
       width: 120,
       height: 150,
       borderRadius: theme.borderRadius[8],
+      '@media (min-width: 800px)': {
+        width: 100,
+        height: 125,
+      },
     },
     greyText: {
       color: theme.colors.textGrey,
