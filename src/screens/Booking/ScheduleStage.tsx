@@ -138,15 +138,15 @@ const ScheduleStage = ({session, date}) => {
               <Icon as={MaterialIcons} name="date-range" size='28px' color={colors.textPrimary} m={4} />
             </Center>
 
-            <Text style={styles.sessionHeader} dataSet={{ media: ids.sessionHeader}}>{date === '' ? 'schedule your session' : date}</Text>
+            <Text style={styles.sessionHeader} dataSet={{ media: ids.sessionHeader}}>{date === null ? 'schedule your session' : date}</Text>
             </HStack>
 
           { (isSmallScreen) ? "" : (<Button style={styles.primaryButtonWeb} dataSet={{ media: ids.primaryButtonWeb}}>
-            <Text style={styles.primaryButtonTextWeb} dataSet={{ media: ids.primaryButtonTextWeb}}>{date !== '' ? 'change' : 'pick a date'}</Text>
+            <Text style={styles.primaryButtonTextWeb} dataSet={{ media: ids.primaryButtonTextWeb}}>{date !== null ? 'change' : 'pick a date'}</Text>
           </Button>)}
         </HStack>
         { (!isSmallScreen) ? "" : (<Button style={styles.primaryButton} dataSet={{ media: ids.primaryButton}}>
-          <Text style={styles.primaryButtonText} dataSet={{ media: ids.primaryButtonText}}>{date !== '' ? 'change' : 'pick a date'}</Text>
+          <Text style={styles.primaryButtonText} dataSet={{ media: ids.primaryButtonText}}>{date !== null ? 'change' : 'pick a date'}</Text>
         </Button>)}
       </Box>
       <Button style={[styles.nextButton, (date === '' ? styles.nextButtonDisabled : "")]} dataSet={{ media: ids.nextButton}}>

@@ -46,7 +46,6 @@ const makeStyles = () => {
       borderRadius: theme.borderRadius[8],
       justifySelf: 'flex-end',
       '@media (min-width: 800px)': {
-        marginTop: 100,
         marginBottom: theme.spacing[16],
       },
     },
@@ -86,8 +85,12 @@ const makeStyles = () => {
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
         paddingHorizontal: 50,
-        justifyContent: 'flex-end',
       },
+    },
+    receiptWebContainer: {
+      height: '55%',
+      alignItems: 'center',
+      justifyContent: 'space-between',
     },
     receipt: {
       marginTop: theme.spacing[24]
@@ -119,24 +122,27 @@ const makeStyles = () => {
       fontSize: theme.fontSize.regular,
     },
     coachInfoContainer: {
-      backgroundColor: theme.colors.white,
-      alignSelf: 'flex-start',
-      position: 'absolute',
-      top: 0,
-      width: 'auto ',
-      paddingTop: theme.spacing[32],
-    },
-    coachInfo: {
-    },
-    coachInfoImageBox: {
+      // backgroundColor: theme.colors.white,
+      width: '100%',
+      marginTop: theme.spacing[32],
     },
     coachInfoImage: {
+      borderRadius: '50%',
+      width: 60,
+      height: 60,
+      marginEnd: theme.spacing[16],
     },
     coachInfoTextsContainer: {
+      // backgroundColor: theme.colors.white,
+      justifyContent: 'center',
     },
     coachInfoMainText: {
+      color: theme.colors.textPrimary,
+      fontSize: theme.fontSize.regular,
     },
     coachInfoSubtext: {
+      color: theme.colors.textGrey,
+      fontSize: theme.fontSize.sm,
     },
   });
 
@@ -168,17 +174,16 @@ const PaymentStage = ({session, }) => {
         <SessionInfo session={session} />
         <Divider backgroundColor={colors.grey} opacity={0.6} />
         <Text style={styles.paymentHeader} dataSet={{ media: ids.paymentHeader}}>saved payment options</Text>
+        
       </Box>
 
       <VStack w='100%' style={styles.receiptContainer} dataSet={{ media: ids.receiptContainer}}>
 
-        { (isSmallScreen) ? "" : (<Box style={styles.coachInfoContainer} dataSet={{ media: ids.coachInfoContainer}}>
+      { (isSmallScreen) ? null : (<Box style={styles.coachInfoContainer} dataSet={{ media: ids.coachInfoContainer}}>
           <HStack style={styles.coachInfo} dataSet={{ media: ids.coachInfo}}>
-            {/* <Center> style={styles.coachInfoImageBox} dataSet={{ media: ids.coachInfoImageBox}} */}
               <Image alt='coach image' style={styles.coachInfoImage} dataSet={{ media: ids.coachInfoImage}} 
               source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU'}}
               />
-            {/* </Center> */}
 
             <VStack style={styles.coachInfoTextsContainer} dataSet={{ media: ids.coachInfoTextsContainer}} >
               <Text style={styles.coachInfoMainText} dataSet={{ media: ids.coachInfoMainText}} >islam mohareb</Text>
@@ -186,10 +191,33 @@ const PaymentStage = ({session, }) => {
             </VStack>
           </HStack>
 
-          <Divider backgroundColor={colors.grey} opacity={0.6} mt={3} mb={4} /> 
+          <Divider backgroundColor={colors.grey} opacity={0.6} mt={4} mb={4} /> 
         </Box>)}
 
-        <Box w='100%' style={styles.receipt} dataSet={{ media: ids.receipt}} >
+        { (isSmallScreen) ? (null) : (
+        <Box w='100%'  style={styles.receiptWebContainer} dataSet={{ media: ids.receiptWebContainer}} >
+          <Box w='100%' style={styles.receipt} dataSet={{ media: ids.receipt}} >
+            <HStack style={styles.receiptSubitem} dataSet={{ media: ids.receiptSubitem}}>
+              <Text style={styles.receiptSubitemLabel} dataSet={{ media: ids.receiptSubitemLabel}}>subtotal</Text>
+              <Text style={styles.receiptSubitemAmount} dataSet={{ media: ids.receiptSubitemAmount}}>360$</Text>
+            </HStack>
+
+            <Divider backgroundColor={colors.grey} opacity={0.6} mt={3} mb={4} />
+
+            <HStack style={styles.receiptTotal} dataSet={{ media: ids.receiptTotal}}>
+              <Text style={styles.receiptTotalLabel} dataSet={{ media: ids.receiptTotalLabel}}>total amount</Text>
+              <Text style={styles.receiptTotalAmount} dataSet={{ media: ids.receiptTotalAmount}}>360$</Text>
+            </HStack>
+          </Box>
+          <Button style={styles.nextButton} dataSet={{ media: ids.nextButton}}>
+            <Text style={styles.nextButtonText} dataSet={{ media: ids.nextButtonText}}>make payment</Text>
+          </Button>
+        </Box>
+        )}
+        
+        
+        { (!isSmallScreen) ? (null) : (
+          <Box w='100%' style={styles.receipt} dataSet={{ media: ids.receipt}} >
           <HStack style={styles.receiptSubitem} dataSet={{ media: ids.receiptSubitem}}>
             <Text style={styles.receiptSubitemLabel} dataSet={{ media: ids.receiptSubitemLabel}}>subtotal</Text>
             <Text style={styles.receiptSubitemAmount} dataSet={{ media: ids.receiptSubitemAmount}}>360$</Text>
@@ -202,9 +230,14 @@ const PaymentStage = ({session, }) => {
             <Text style={styles.receiptTotalAmount} dataSet={{ media: ids.receiptTotalAmount}}>360$</Text>
           </HStack>
         </Box>
-        <Button style={styles.nextButton} dataSet={{ media: ids.nextButton}}>
-          <Text style={styles.nextButtonText} dataSet={{ media: ids.nextButtonText}}>make payment</Text>
-        </Button>
+        )}
+        
+        { (!isSmallScreen) ? (null) : (
+          
+          <Button style={styles.nextButton} dataSet={{ media: ids.nextButton}}>
+            <Text style={styles.nextButtonText} dataSet={{ media: ids.nextButtonText}}>make payment</Text>
+          </Button>
+        )}
       </VStack>
 
     </Box>

@@ -39,9 +39,9 @@ const Payment = () => {
   });
     const {ids, styles} = makeStyles();
   
-    const [scheduleState, setScheduleState] = useState('completed');
-    const [contactState, setContactState] = useState('completed');
-    const [paymentState, setPaymentState] = useState('active');
+    const [scheduleState, setScheduleState] = useState('active');
+    const [contactState, setContactState] = useState('inactive');
+    const [paymentState, setPaymentState] = useState('inactive');
     
     const headerValues = [
       { 
@@ -61,7 +61,7 @@ const Payment = () => {
       },
     ];
    
-    const [date, setDate] = useState('wed, february 2nd 2023');
+    const [date, setDate] = useState(null);
 
     const renderSwitch = () => {
        
