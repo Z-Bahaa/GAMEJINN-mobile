@@ -1,4 +1,4 @@
-import { VStack, Text, useTheme, HStack, Center,  useMediaQuery, Icon, Button, Box, Divider } from 'native-base'
+import { VStack, Text, useTheme, HStack, Center,  useMediaQuery, Image, Button, Box, Divider } from 'native-base'
 import StyleSheet from 'react-native-media-query';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 
@@ -87,7 +87,6 @@ const makeStyles = () => {
         borderTopRightRadius: 0,
         paddingHorizontal: 50,
         justifyContent: 'flex-end',
-
       },
     },
     receipt: {
@@ -118,6 +117,26 @@ const makeStyles = () => {
     receiptTotalAmount: {
       color: theme.colors.textPrimary,
       fontSize: theme.fontSize.regular,
+    },
+    coachInfoContainer: {
+      backgroundColor: theme.colors.white,
+      alignSelf: 'flex-start',
+      position: 'absolute',
+      top: 0,
+      width: 'auto ',
+      paddingTop: theme.spacing[32],
+    },
+    coachInfo: {
+    },
+    coachInfoImageBox: {
+    },
+    coachInfoImage: {
+    },
+    coachInfoTextsContainer: {
+    },
+    coachInfoMainText: {
+    },
+    coachInfoSubtext: {
     },
   });
 
@@ -152,8 +171,25 @@ const PaymentStage = ({session, }) => {
       </Box>
 
       <VStack w='100%' style={styles.receiptContainer} dataSet={{ media: ids.receiptContainer}}>
-        
-        <Box w='100%' w='100%' style={styles.receipt} dataSet={{ media: ids.receipt}} >
+
+        { (isSmallScreen) ? "" : (<Box style={styles.coachInfoContainer} dataSet={{ media: ids.coachInfoContainer}}>
+          <HStack style={styles.coachInfo} dataSet={{ media: ids.coachInfo}}>
+            {/* <Center> style={styles.coachInfoImageBox} dataSet={{ media: ids.coachInfoImageBox}} */}
+              <Image alt='coach image' style={styles.coachInfoImage} dataSet={{ media: ids.coachInfoImage}} 
+              source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU'}}
+              />
+            {/* </Center> */}
+
+            <VStack style={styles.coachInfoTextsContainer} dataSet={{ media: ids.coachInfoTextsContainer}} >
+              <Text style={styles.coachInfoMainText} dataSet={{ media: ids.coachInfoMainText}} >islam mohareb</Text>
+              <Text style={styles.coachInfoSubtext} dataSet={{ media: ids.coachInfoSubtext}} >Ultimate Professional & Coach</Text>
+            </VStack>
+          </HStack>
+
+          <Divider backgroundColor={colors.grey} opacity={0.6} mt={3} mb={4} /> 
+        </Box>)}
+
+        <Box w='100%' style={styles.receipt} dataSet={{ media: ids.receipt}} >
           <HStack style={styles.receiptSubitem} dataSet={{ media: ids.receiptSubitem}}>
             <Text style={styles.receiptSubitemLabel} dataSet={{ media: ids.receiptSubitemLabel}}>subtotal</Text>
             <Text style={styles.receiptSubitemAmount} dataSet={{ media: ids.receiptSubitemAmount}}>360$</Text>

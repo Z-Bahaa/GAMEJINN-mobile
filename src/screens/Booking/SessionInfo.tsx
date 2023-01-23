@@ -71,7 +71,7 @@ const SessionInfo = ({session}) => {
       {/* </Center> */}
       <VStack style={styles.textContainer} dataSet={{ media: ids.textContainer}} >
         <Text  style={styles.greyText} dataSet={{ media: ids.greyText}} >{session?.serviceType}</Text>
-        <Text  style={styles.whiteText} dataSet={{ media: ids.Text}} >{session?.title}</Text>
+        <Text  style={styles.whiteText} dataSet={{ media: ids.whiteText}} >{session?.title}</Text>
       </VStack>
     </HStack>
   )
