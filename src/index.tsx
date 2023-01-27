@@ -8,6 +8,7 @@ import Search from './screens/Search'
 import Coaches from './screens/Coaches'
 import Games from './screens/Games'
 import Booking from './screens/Booking'
+import CoachProfile from './screens/CoachProfile'
 
 const makeStyles = () => {
   const theme = useTheme();
@@ -31,7 +32,7 @@ export default function SubApp() {
 
   return (
       <Box safeArea style={styles.container} dataSet={{ media: ids.container}}>
-        <Booking />
+        <CoachProfile />
       </Box>
     );
 }
