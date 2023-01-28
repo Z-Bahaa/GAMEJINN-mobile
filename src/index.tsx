@@ -1,4 +1,4 @@
-import {   Box, useTheme, } from 'native-base';
+import {   Box, useTheme, ScrollView } from 'native-base';
 import StyleSheet from 'react-native-media-query';
 import theme from './theme'
 import { useFonts } from 'expo-font'
@@ -32,7 +32,10 @@ export default function SubApp() {
 
   return (
       <Box safeArea style={styles.container} dataSet={{ media: ids.container}}>
-        <CoachProfile />
+        <ScrollView w='100%' >
+          <CoachProfile />
+        </ScrollView>
+        
       </Box>
     );
 }

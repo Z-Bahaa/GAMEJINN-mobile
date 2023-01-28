@@ -180,7 +180,7 @@ const PaymentStage = ({session, }) => {
       <VStack w='100%' style={styles.receiptContainer} dataSet={{ media: ids.receiptContainer}}>
 
       { (isSmallScreen) ? null : (<Box style={styles.coachInfoContainer} dataSet={{ media: ids.coachInfoContainer}}>
-          <HStack style={styles.coachInfo} dataSet={{ media: ids.coachInfo}}>
+          <HStack>
               <Image alt='coach image' style={styles.coachInfoImage} dataSet={{ media: ids.coachInfoImage}} 
               source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU'}}
               />

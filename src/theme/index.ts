@@ -4,7 +4,9 @@ import { extendTheme } from 'native-base';
 const primaryTheme = extendTheme({
   colors: {
     brandPrimary: "#1e0d2a",
+    brandPrimaryHalf: "rgba(31, 13, 43, 0.5)",
     brandSecondary: "#3B2749",
+    brandSecondaryHalf: "rgba(59, 39, 73, 0.5)",
     brandPrimaryVague: "rgba(30, 13, 42, .95)",
     textPrimary: "#ffffff",
     textSecondary: "#ffd68a",
@@ -13,6 +15,8 @@ const primaryTheme = extendTheme({
     white: "#fff",
     brandLight: "#5f05a5",
     grey: "#919197",
+    darkGrey: "#696A73",
+    darkGreyHalf: "rgba(104, 105, 115, 0.5)",
     yellow: "#ffd68a",
   },
   fontSize: {
