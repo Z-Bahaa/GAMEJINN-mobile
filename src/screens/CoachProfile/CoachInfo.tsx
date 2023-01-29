@@ -1,3 +1,4 @@
+import {useState } from 'react'
 import { HStack, useMediaQuery,Image, useTheme, Box, VStack, Text, Center, Divider, Button, Icon} from 'native-base'
 import StyleSheet from 'react-native-media-query';
 import {Dimensions} from 'react-native'
@@ -84,7 +85,8 @@ const makeStyles = () => {
     aboutBody: {
       fontSize: theme.fontSize.xs,
       color: theme.colors.textPrimary,
-      alignSelf: 'flex-start'
+      alignSelf: 'flex-start',
+      textOverflow: 'ellipsis'
     },
     aboutHeaderText: {
       fontSize: theme.fontSize.md,
@@ -106,6 +108,16 @@ const makeStyles = () => {
     },
     aboutHeaderSocialsIcon: {
     },
+    moreButton: {
+      alignSelf: 'flex-start',
+      marginEnd: theme.spacing[8],
+      marginTop: theme.spacing[12],
+      // backgroundColor: theme.colors.textPrimary,
+    },
+    moreButtonText: {
+      color: theme.colors.textSecondary,
+      fontSize: theme.fontSize.sm,
+    },
   });
 
   return styleSheet
@@ -124,6 +136,9 @@ const CoachInfo = () => {
       borderRadius,
     } = useTheme(); 
 
+    const [showMore, setShowMore] = useState(false)
+
+    const description = "Every lesson will be recorded, just ask me for the VOD aand I will upload it & send it right away! There is a twitch sub discount and maybe something in the FAQ! I have been competing in Smash tournaments for over 10 years & coaching for over 5 years.I have beatenthe best players in the world, won nationals, and made my markon the scene as THE analytical pro player :) Probably the Ultimate/ Smash 4 player who";
 
 
 
@@ -159,9 +174,12 @@ const CoachInfo = () => {
     </HStack>
 
     <Text style={styles.aboutBody} dataSet={{ media: ids.aboutBody}}>
-      Every lesson will be recorded, just ask me for the VOD and I will upload it & send it right 
-      away! There is a twitch sub discount and maybe something in the FAQ! I have been ...
+    {(description.length > 180) ? showMore  ? description : description.slice(0, 180) + '...' : description}
     </Text>
+
+    {(description.length > 180) ? <Button variant="unstyled" p={0} style={styles.moreButton} dataSet={{ media: ids.moreButton}} onPress={() => setShowMore(!showMore)} >
+        <Text style={styles.moreButtonText} dataSet={{ media: ids.moreButtonText}} >{!showMore ? 'read more' : 'read less'}</Text>
+    </Button>: null}
 
     <Divider backgroundColor={colors.grey} opacity={0.6} mt={4} mb={4} /> 
 

@@ -45,7 +45,11 @@ const makeStyles = () => {
       paddingHorizontal: theme.spacing[8],
       marginBottom: theme.spacing[8],
       marginTop: theme.spacing[8]/2,
-      alignSelf: 'flex-start'
+      alignSelf: 'flex-start',
+      '@media (min-width: 800px)': {
+        marginTop: theme.spacing[12],
+        marginBottom: 0,
+      },  
     },
     gameTagImage: {
       width: 20,
