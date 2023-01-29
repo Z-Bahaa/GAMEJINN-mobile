@@ -112,6 +112,9 @@ const makeStyles = () => {
       color: theme.colors.textPrimary,
       fontSize: theme.fontSize.md -1,
       marginTop: theme.spacing[8],
+      '@media (min-width: 800px)': {
+        marginTop: 0,
+      },
     },
     sessionsSectionServiceTypeOfferHeadSubtext: {
       color: theme.colors.textGrey,
@@ -127,12 +130,16 @@ const makeStyles = () => {
       color: theme.colors.textPrimary,
       fontSize: theme.fontSize.md -1,
       marginEnd: 4,
+      '@media (min-width: 800px)': {
+        marginBottom: theme.spacing[8],
+      },
     },
     sessionsSectionServiceTypeOfferHeadToggleButton: {
       padding: -1,
       margin: -theme.spacing[12],
       marginBottom: -2,
-      
+      '@media (min-width: 800px)': {
+      },
     },
     sessionsSectionServiceTypeOfferBody: {
       
@@ -151,6 +158,9 @@ const makeStyles = () => {
     sessionsSectionServiceTypeOfferBodyPriceSectionButton: {
       color: theme.colors.textPrimary,
       marginTop: theme.spacing[8],
+      '@media (min-width: 800px)': {
+        marginTop: 0,
+      },
     },
     sessionsSectionServiceTypeOfferBodyPriceSectionButtonsContainer: {
       backgroundColor: theme.colors.brandPrimaryHalf,

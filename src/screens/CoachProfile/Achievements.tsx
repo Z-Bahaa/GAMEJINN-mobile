@@ -17,6 +17,9 @@ const makeStyles = () => {
     
     achievementsContainer: {
       marginTop: theme.spacing[16],
+      '@media (min-width: 800px)': {
+        marginTop: theme.spacing[32]*2,
+      }
     },
     gameAchievementsContainer: {
       marginTop: theme.spacing[12],

@@ -18,12 +18,23 @@ const makeStyles = () => {
       marginTop: theme.spacing[16],
       justifyContent: 'space-between',
       width: '100%',
+      '@media (min-width: 800px)': {
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+      },  
     },
     splitInfoMajorSection: {
       maxWidth: '75%',
+      '@media (min-width: 800px)': {
+        width: '100%',
+      },  
     },
     splitInfoMinorSection: {
       width: '30%',
+      '@media (min-width: 800px)': {
+        marginTop: theme.spacing[24],
+        width: '100%',
+      },  
     },
     gameTag: {
       backgroundColor: theme.colors.brandSecondary,

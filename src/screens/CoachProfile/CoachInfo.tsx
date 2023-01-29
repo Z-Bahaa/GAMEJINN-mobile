@@ -22,6 +22,10 @@ const makeStyles = () => {
       padding: theme.spacing[16],
       paddingEnd: theme.spacing[16],
       borderRadius: theme.borderRadius[8],
+      '@media (min-width: 800px)': {
+        marginTop: 0,
+        // backgroundColor: theme.colors.white,
+      },  
       width: '100%',
     },
     coachInfoImage: {
@@ -29,11 +33,18 @@ const makeStyles = () => {
       width: 60,
       height: 60,
       marginEnd: theme.spacing[16],
+      // '@media (min-width: 800px)': {
+      //   width: 50,
+      //   height: 50,
+      // },  
     },
     coachInfoTextsContainer: {
       // backgroundColor: theme.colors.white,
       justifyContent: 'center',
-      marginTop: theme.spacing[12],
+      marginTop: theme.spacing[8],  
+      // '@media (min-width: 800px)': {
+      //   justifyContent: 'space-around',
+      // }, 
     },
     coachInfoMainText: {
       color: theme.colors.textPrimary,
@@ -42,6 +53,10 @@ const makeStyles = () => {
     coachInfoSubtext: {
       color: theme.colors.textGrey,
       fontSize: theme.fontSize.sm,
+      marginEnd: theme.spacing[16],
+      '@media (min-width: 800px)': {
+      marginTop: theme.spacing[8]/2,
+      },  
     },
     primaryButton: {
       marginBottom: 0,
@@ -51,9 +66,6 @@ const makeStyles = () => {
       justifyContent: 'center',
       borderRadius: theme.borderRadius[8],
       justifySelf: 'flex-end',
-      '@media (min-width: 800px)': {
-        marginBottom: theme.spacing[16],
-      },
     },
     primaryButtonText: {
       marginTop: theme.spacing[12]/2,
@@ -77,6 +89,9 @@ const makeStyles = () => {
     aboutHeaderText: {
       fontSize: theme.fontSize.md,
       color: theme.colors.textSecondary,
+      '@media (min-width: 800px)': {
+        marginBottom: theme.spacing[8],
+      }, 
     },
     aboutHeaderSocialsContainer: {
       flex: 1,

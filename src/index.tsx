@@ -1,4 +1,4 @@
-import {   Box, useTheme, ScrollView } from 'native-base';
+import {   Box, useTheme, ScrollView,useMediaQuery } from 'native-base';
 import StyleSheet from 'react-native-media-query';
 import theme from './theme'
 import { useFonts } from 'expo-font'
@@ -15,6 +15,7 @@ const makeStyles = () => {
 
 
   const styleSheet = StyleSheet.create({
+
     container: {
       flex: 1,
       alignItems: 'center',
@@ -27,12 +28,15 @@ const makeStyles = () => {
 }
 
 export default function SubApp() {
+  const [isSmallScreen] = useMediaQuery({
+    maxWidth: 480
+  });
 
   const {ids, styles} = makeStyles();
 
   return (
       <Box safeArea style={styles.container} dataSet={{ media: ids.container}}>
-        <ScrollView w='100%' >
+        <ScrollView w={isSmallScreen ? '100%' : 'auto'} >
           <CoachProfile />
         </ScrollView>
         

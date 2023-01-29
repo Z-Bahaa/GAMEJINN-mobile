@@ -24,21 +24,35 @@ const makeStyles = () => {
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
       textAlign: 'center',
+      '@media (min-width: 800px)': {
+        padding: '5px 10px 3px 10px',
+        borderRadius: 10,
+        alignItems: 'center',
+      },
     },
     infoTagIcon: {
       opacity: 0.6,
       marginTop: 5,
+      '@media (min-width: 800px)': {
+        marginTop: 0,
+      },
     },
     infoTagSubtext: {
       fontSize: theme.fontSize.xxs,
       color: theme.colors.textGrey,
       marginStart: theme.spacing[12]/3,
       marginTop: 1,
+      '@media (min-width: 800px)': {
+        marginTop: 0,
+      },
     },
     infoTagMainText: {
       fontSize: theme.fontSize.xs,
       color: theme.colors.textPrimary,
       marginTop: 3,
+      '@media (min-width: 800px)': {
+        marginTop: 0,
+      },
     },
   });
 
