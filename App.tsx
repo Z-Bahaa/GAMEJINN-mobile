@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { NativeBaseProvider, } from 'native-base';
 import theme from './src/theme'
 import { useFonts } from 'expo-font'
@@ -14,8 +15,8 @@ export default function App() {
   }
 
   return (
-    <NativeBaseProvider theme={theme} >
-      <SubApp/>
-    </NativeBaseProvider>
+        <NativeBaseProvider theme={theme} >
+            <SubApp/>
+        </NativeBaseProvider>
     );
 }

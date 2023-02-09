@@ -1,7 +1,7 @@
 import { extendTheme } from 'native-base';
 
 
-const primaryTheme = extendTheme({
+const theme = extendTheme({
   colors: {
     brandPrimary: "#1e0d2a",
     brandPrimaryHalf: "rgba(31, 13, 43, 0.5)",
@@ -12,7 +12,7 @@ const primaryTheme = extendTheme({
     textSecondary: "#ffd68a",
     textGrey: "#919197",
     textBlack: "#000",
-    white: "#fff",
+    componentBGLight: "#fff",
     brandLight: "#5f05a5",
     grey: "#919197",
     darkGrey: "#696A73",
@@ -53,10 +53,10 @@ const primaryTheme = extendTheme({
 })
 
 
-type CustomThemeType = typeof primaryTheme;
+type CustomThemeType = typeof theme;
 
 declare module 'native-base' {
   interface ICustomTheme extends CustomThemeType {}
 }
 
-export default primaryTheme
+export default theme

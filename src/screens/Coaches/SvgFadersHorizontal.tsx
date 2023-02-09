@@ -1,7 +1,7 @@
 import * as React from "react"
 import Svg, { Path } from "react-native-svg"
 
-const SvgFadersHorizontal = ({color, size}) => {
+const SvgFadersHorizontal = ({color, size}: any) => {
   return (
     <Svg
       width={size}

@@ -2,6 +2,8 @@ import {useState } from 'react'
 import { VStack, Text, useTheme, Box,  useMediaQuery, Button } from 'native-base'
 import StyleSheet from 'react-native-media-query';
 
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+
 import BookingHeader from './BookingHeader'
 import ScheduleStage from './ScheduleStage'
 import ContactStage from './ContactStage'
@@ -9,6 +11,7 @@ import PaymentStage from './PaymentStage'
 import PaymentSuccess from './PaymentSuccess'
 
 import { session } from '../../dummyData/Booking'
+import DateTimePicker from './DateTimePicker';
 
 
 
@@ -42,6 +45,8 @@ const Payment = () => {
     const [scheduleState, setScheduleState] = useState('active');
     const [contactState, setContactState] = useState('inactive');
     const [paymentState, setPaymentState] = useState('inactive');
+
+    const [datePickerActive, setDatePickerActive] = useState(true);
     
     const headerValues = [
       { 
@@ -61,7 +66,7 @@ const Payment = () => {
       },
     ];
    
-    const [date, setDate] = useState(null);
+    const [date, setDate] = useState(new Date());
 
     const renderSwitch = () => {
        
@@ -86,10 +91,17 @@ const Payment = () => {
 
   return (
     <Box  style={styles.container} dataSet={{ media: ids.container}} >
-      {(paymentState  === 'completed')   ? "" : <BookingHeader data={headerValues}/>}
+      {(paymentState  === 'completed' || datePickerActive === true)   ? "" : <BookingHeader data={headerValues}/>}
       {
         renderSwitch()
       }
+      {/* native */}
+      {/* <DateTimePickerModal
+        isVisible={datePickerActive}
+        mode="datetime"
+        onConfirm={(val) => alert ('on confirm')}
+        onCancel={() => alert ('on cancel')}
+      /> */}
     </Box>
   )
 }

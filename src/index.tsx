@@ -3,12 +3,9 @@ import StyleSheet from 'react-native-media-query';
 import theme from './theme'
 import { useFonts } from 'expo-font'
 
-import QuickSearch from './screens/QuickSearch'
+import MainStack from './navigation/mainStack'
 import Search from './screens/Search'
-import Coaches from './screens/Coaches'
-import Games from './screens/Games'
-import Booking from './screens/Booking'
-import CoachProfile from './screens/CoachProfile'
+
 
 const makeStyles = () => {
   const theme = useTheme();
@@ -18,7 +15,7 @@ const makeStyles = () => {
 
     container: {
       flex: 1,
-      alignItems: 'center',
+      // alignItems: 'center',
       justifyContent: 'flex-start',
       backgroundColor: theme.colors.brandPrimary,
     },
@@ -36,10 +33,7 @@ export default function SubApp() {
 
   return (
       <Box safeArea style={styles.container} dataSet={{ media: ids.container}}>
-        <ScrollView w={isSmallScreen ? '100%' : 'auto'} >
-          <CoachProfile />
-        </ScrollView>
-        
+          <MainStack />
       </Box>
     );
 }

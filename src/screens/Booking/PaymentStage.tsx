@@ -1,4 +1,5 @@
-import { VStack, Text, useTheme, HStack, Center,  useMediaQuery, Image, Button, Box, Divider } from 'native-base'
+import { useState } from 'react'
+import { VStack, Text, useTheme, HStack, Center,  useMediaQuery, Image, Button, Box, Divider, Radio } from 'native-base'
 import StyleSheet from 'react-native-media-query';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 
@@ -16,12 +17,13 @@ const makeStyles = () => {
       justifyContent: 'space-between',
       paddingTop: theme.spacing[24],
       paddingBottom: theme.spacing[8],
-      '@media (min-width: 800px)': {
-        flexDirection: 'row',
-        paddingTop: theme.spacing[16],
-      },
+        '@media (min-width: 800px)': {
+          flexDirection: 'row',
+          paddingTop: theme.spacing[16],
+        },
       '@media (max-width: 800px)': {
         height: '100%',
+        justifyContent: 'space-between',
       },
       // backgroundColor: theme.colors.textPrimary,
     },
@@ -38,7 +40,8 @@ const makeStyles = () => {
       // backgroundColor: theme.colors.textPrimary,
     },
     nextButton: {
-      marginBottom: theme.spacing[32]*2,
+      marginTop: theme.spacing[32]*6.5,
+      marginBottom: theme.spacing[32]*3,
       width: '100%',
       backgroundColor: theme.colors.yellow,
       alignItems: 'center',
@@ -127,10 +130,11 @@ const makeStyles = () => {
       marginTop: theme.spacing[32],
     },
     coachInfoImage: {
-      borderRadius: '50%',
+      borderRadius: 1000,
       width: 60,
       height: 60,
       marginEnd: theme.spacing[16],
+      padding: theme.spacing[16],
     },
     coachInfoTextsContainer: {
       // backgroundColor: theme.colors.white,
@@ -144,6 +148,21 @@ const makeStyles = () => {
       color: theme.colors.textGrey,
       fontSize: theme.fontSize.sm,
     },
+    radioContainer: {
+      marginTop: theme.spacing[24],
+      borderWidth: 1,
+      borderColor: theme.colors.grey,
+      borderRadius: theme.borderRadius[8],
+      padding: theme.spacing[24],
+      paddingStart: theme.spacing[16],
+      width: '100%'
+
+    },
+    paymentImage: {
+      height: 23,
+      width: 105  ,
+      // marginStart: theme.spacing[12]/4,
+    }
   });
 
   return styleSheet
@@ -153,17 +172,17 @@ const PaymentStage = ({session, }) => {
   const [isSmallScreen] = useMediaQuery({
     maxWidth: 480
   });
-    const {ids, styles} = makeStyles();
-    const {
-      colors,
-      spacing,
-      fontSize,
-      sizes,
-      borderRadius,
-    } = useTheme(); 
+  const {ids, styles} = makeStyles();
+  const {
+    colors,
+    spacing,
+    fontSize,
+    sizes,
+    borderRadius,
+  } = useTheme(); 
 
-   
-    
+  
+  const [paymentMethod, setPaymentMethod] = useState('');
 
 
   return (
@@ -174,6 +193,19 @@ const PaymentStage = ({session, }) => {
         <SessionInfo session={session} />
         <Divider backgroundColor={colors.grey} opacity={0.6} />
         <Text style={styles.paymentHeader} dataSet={{ media: ids.paymentHeader}}>saved payment options</Text>
+
+        
+        <Radio.Group defaultValue='payMob' name='paymentRadioGroup' accessibilityLabel= 'payment method' value={paymentMethod} onChange={val => setPaymentMethod(val)} >
+          <Box  style={styles.radioContainer} dataSet={{ media: ids.radioContainer}} > 
+            <Radio value='payMob' size='sm'
+            backgroundColor={colors.brandPrimary}
+            borderColor={colors.grey}
+            colorScheme='warning'
+            >
+              <Image alt='hello' source={{uri: 'https://paymob.com/images/logoC.png'}}  style={styles.paymentImage} dataSet={{ media: ids.paymentImage}} />
+            </Radio>
+          </Box>
+        </Radio.Group>
         
       </Box>
 
@@ -192,6 +224,7 @@ const PaymentStage = ({session, }) => {
           </HStack>
 
           <Divider backgroundColor={colors.grey} opacity={0.6} mt={4} mb={4} /> 
+
         </Box>)}
 
         { (isSmallScreen) ? (null) : (
@@ -232,12 +265,9 @@ const PaymentStage = ({session, }) => {
         </Box>
         )}
         
-        { (!isSmallScreen) ? (null) : (
-          
           <Button style={styles.nextButton} dataSet={{ media: ids.nextButton}}>
             <Text style={styles.nextButtonText} dataSet={{ media: ids.nextButtonText}}>make payment</Text>
           </Button>
-        )}
       </VStack>
 
     </Box>

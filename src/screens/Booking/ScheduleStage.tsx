@@ -138,7 +138,7 @@ const ScheduleStage = ({session, date}) => {
               <Icon as={MaterialIcons} name="date-range" size='28px' color={colors.textPrimary} m={4} />
             </Center>
 
-            <Text style={styles.sessionHeader} dataSet={{ media: ids.sessionHeader}}>{date === null ? 'schedule your session' : date}</Text>
+            <Text style={styles.sessionHeader} dataSet={{ media: ids.sessionHeader}}>{date === null ? 'schedule your session' : 'date'}</Text>
             </HStack>
 
           { (isSmallScreen) ? "" : (<Button style={styles.primaryButtonWeb} dataSet={{ media: ids.primaryButtonWeb}}>
@@ -149,7 +149,8 @@ const ScheduleStage = ({session, date}) => {
           <Text style={styles.primaryButtonText} dataSet={{ media: ids.primaryButtonText}}>{date !== null ? 'change' : 'pick a date'}</Text>
         </Button>)}
       </Box>
-      <Button style={[styles.nextButton, (date === '' ? styles.nextButtonDisabled : "")]} dataSet={{ media: ids.nextButton}}>
+      {/* @ts-ignore */}
+      <Button style={[styles.nextButton, (date === new Date ? styles.nextButtonDisabled : "")]} dataSet={{ media: ids.nextButton}}>
         <Text style={styles.nextButtonText} dataSet={{ media: ids.nextButtonText}}>next</Text>
       </Button>
     </VStack>

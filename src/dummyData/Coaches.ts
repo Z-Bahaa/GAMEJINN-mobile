@@ -377,4 +377,9 @@ const filterServiceTypes = [
   'match review',
   '1:1 session',
 ]
-export {coachesList, filterGames, filterServiceTypes}
+
+const priceRanges = [
+  '20-30 EGP',
+  '50 - 4000 egp',
+]
+export {coachesList, filterGames, filterServiceTypes, priceRanges}
