@@ -95,37 +95,36 @@ const CoachProfile = ({navigation}: any) => {
   )
 
   const SplitInfo = () => (<HStack style={styles.splitInfoContainer} dataSet={{ media: ids.splitInfoContainer}} >
+  <VStack style={styles.splitInfoMajorSection} dataSet={{ media: ids.splitInfoMajorSection}}>
+    <Text style={styles.coachInfoMainText} dataSet={{ media: ids.coachInfoMainText}} >offered games</Text>
 
-    <VStack style={styles.splitInfoMajorSection} dataSet={{ media: ids.splitInfoMajorSection}}>
-      <Text style={styles.coachInfoMainText} dataSet={{ media: ids.coachInfoMainText}} >offered games</Text>
-  
-      <HStack style={styles.SplitInfoGameTag} dataSet={{ media: ids.SplitInfoGameTag}}>
-        <Image alt='coach image' style={styles.SplitInfoGameTagImage} dataSet={{ media: ids.SplitInfoGameTagImage}} 
-            source={{uri: 'https://www.citypng.com/public/uploads/preview/-41603132788rzosdsitdt.png'}}
-            />
-        <Text style={styles.SplitInfoGameTagTitle} dataSet={{ media: ids.SplitInfoGameTagTitle}}>
-        Super Smash bros. Ultimate Ultimate
-        </Text>
-      </HStack>
-  
-      <HStack style={styles.SplitInfoGameTag} dataSet={{ media: ids.SplitInfoGameTag}}>
-        <Image alt='coach image' style={styles.SplitInfoGameTagImage} dataSet={{ media: ids.SplitInfoGameTagImage}} 
-            source={{uri: 'https://preview.redd.it/rqassez3kc591.png?width=841&format=png&auto=webp&s=a2035dca162b77fb88961464e73a1c57efe95cca'}}
-            />
-        <Text style={styles.SplitInfoGameTagTitle} dataSet={{ media: ids.SplitInfoGameTagTitle}}>
-        Super Smash bros. Ultimate
-        </Text>
-      </HStack>
-  
-    </VStack>
-  
-    <VStack style={styles.splitInfoMinorSection} dataSet={{ media: ids.splitInfoMinorSection}}>
-      <Text style={styles.coachInfoMainText} dataSet={{ media: ids.coachInfoMainText}} >languages</Text>
-      <Text style={styles.SplitInfoLangSectionSubtext} dataSet={{ media: ids.SplitInfoLangSectionSubtext}} >english</Text>
-      <Text style={styles.SplitInfoLangSectionSubtext} dataSet={{ media: ids.SplitInfoLangSectionSubtext}} >arabic</Text>
-    </VStack>
+    <HStack style={styles.SplitInfoGameTag} dataSet={{ media: ids.SplitInfoGameTag}}>
+      <Image alt='coach image' style={styles.SplitInfoGameTagImage} dataSet={{ media: ids.SplitInfoGameTagImage}} 
+          source={{uri: 'https://www.citypng.com/public/uploads/preview/-41603132788rzosdsitdt.png'}}
+          />
+      <Text style={styles.SplitInfoGameTagTitle} dataSet={{ media: ids.SplitInfoGameTagTitle}}>
+      Super Smash bros. Ultimate Ultimate
+      </Text>
     </HStack>
-    )
+
+    <HStack style={styles.SplitInfoGameTag} dataSet={{ media: ids.SplitInfoGameTag}}>
+      <Image alt='coach image' style={styles.SplitInfoGameTagImage} dataSet={{ media: ids.SplitInfoGameTagImage}} 
+          source={{uri: 'https://preview.redd.it/rqassez3kc591.png?width=841&format=png&auto=webp&s=a2035dca162b77fb88961464e73a1c57efe95cca'}}
+          />
+      <Text style={styles.SplitInfoGameTagTitle} dataSet={{ media: ids.SplitInfoGameTagTitle}}>
+      Super Smash bros. Ultimate
+      </Text>
+    </HStack>
+
+  </VStack>
+
+  <VStack style={styles.splitInfoMinorSection} dataSet={{ media: ids.splitInfoMinorSection}}>
+    <Text style={styles.coachInfoMainText} dataSet={{ media: ids.coachInfoMainText}} >languages</Text>
+    <Text style={styles.SplitInfoLangSectionSubtext} dataSet={{ media: ids.SplitInfoLangSectionSubtext}} >english</Text>
+    <Text style={styles.SplitInfoLangSectionSubtext} dataSet={{ media: ids.SplitInfoLangSectionSubtext}} >arabic</Text>
+  </VStack>
+  </HStack>
+  )
 
   const BannerWeb = ({url}: any) => (<Box  style={styles.BannerWebBannerContainer} dataSet={{ media: ids.BannerWebBannerContainer}} >
       <Image alt='hello' source={{uri: url}}  style={styles.BannerWebBannerImage} dataSet={{ media: ids.BannerWebBannerImage}} />
@@ -137,8 +136,7 @@ const CoachProfile = ({navigation}: any) => {
 
   const description = "Every lesson will be recorded, just ask me for the VOD and I will upload it & send it right away! There is a twitch sub discount and maybe something in the FAQ! I have been competing in Smash tournaments for over 10 years & coaching for over 5 years.I have beaten the best players in the world, won nationals, and made my mark on the scene as THE analytical pro player :) Probably the Ultimate/ Smash 4 player who";
 
-  const CoachInfo = () => (
-    <Box style={styles.coachInfoCard} dataSet={{ media: ids.coachInfoCard}}>
+  const CoachInfo = () => (<Box style={styles.coachInfoCard} dataSet={{ media: ids.coachInfoCard}}>
     <Box style={styles.coachInfoContainer} dataSet={{ media: ids.coachInfoContainer}}>
       <HStack >
           <Image alt='coach image' style={styles.coachInfoImage} dataSet={{ media: ids.coachInfoImage}} 
@@ -279,7 +277,7 @@ const CoachProfile = ({navigation}: any) => {
                           >{activeProductAmount* o.pricePerHour.amount.toString() + o.pricePerHour.currency }</Text>
                       </HStack>
   
-                      <Button style={styles.primaryButton} dataSet={{ media: ids.primaryButton}}>
+                      <Button style={styles.primaryButton} dataSet={{ media: ids.primaryButton}} onPress={() => navigation.navigate('BookingTabs')}>
                         <Text style={styles.primaryButtonText} dataSet={{ media: ids.primaryButtonText}}>proceed to buy</Text>
                       </Button>
   

@@ -1,4 +1,4 @@
-export const PaymentTabs = {
+export const BookingTabs = {
   schedule: 'BookingScheduleStage',
   contact: 'BookingContactStage',
   payment: 'BookingPaymentStage',
@@ -6,7 +6,7 @@ export const PaymentTabs = {
 };
 
 export const mainStack = {
-  payment_tab: 'PaymentTabs',
+  booking_tabs: 'BookingTabs',
 
   discover: 'Discover',
   search: 'Search',

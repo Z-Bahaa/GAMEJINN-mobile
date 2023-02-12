@@ -6,7 +6,7 @@ import { mainStack } from './navigator';
 import { NavigationContainer, DefaultTheme  } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-// import PaymentTabs from './PaymentTabs'
+import BookingTabs from '../screens/Booking'
 
 import Discover from '../screens/Discover'
 import Search from '../screens/Search'
@@ -34,13 +34,13 @@ function MainStack() {
   return (
     <NavigationContainer theme={MyTheme}>
       <Stack.Navigator
-        initialRouteName={mainStack.coach_profile}
+        initialRouteName={mainStack.booking_tabs}
         screenOptions={{ gestureEnabled: false }}>
-        {/* <Stack.Screen
+        <Stack.Screen
           options={{ headerShown: false }}
-          name={mainStack.payment_tab}
-          component={PaymentTabs}
-        /> */}
+          name={mainStack.booking_tabs}
+          component={BookingTabs}
+        />
         <Stack.Screen
           options={{ headerShown: false }}
           name={mainStack.discover}
